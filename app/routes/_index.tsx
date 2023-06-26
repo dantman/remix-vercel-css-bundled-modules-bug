@@ -1,4 +1,6 @@
 import type { V2_MetaFunction } from "@remix-run/node";
+import '../bundle.css'
+import styles from '../styles.module.css'
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -7,35 +9,24 @@ export const meta: V2_MetaFunction = () => {
   ];
 };
 
+const commonStyles = {
+  height: 100,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  color: 'black'
+} as const
+
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+      <p>The following blocks are styled green using the respective method of CSS styles.</p>
+      <div style={{ backgroundColor: '#fecaca', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+        <div style={{ ...commonStyles, backgroundColor: '#bbf7d0' }}>{'Inline CSS style={}'}</div>
+        <div style={commonStyles} className='bundled_class'>Bundled CSS (import .css)</div>
+        <div style={commonStyles} className={styles.module_class}>CSS Modules (import .module.css)</div>
+      </div>
     </div>
   );
 }
