@@ -27,7 +27,6 @@ export default function Index() {
         <div style={commonStyles} className='global_class'>Global CSS (link .css)</div>
         <div style={commonStyles} className='bundled_class'>Bundled CSS (import .css)</div>
         <div style={commonStyles} className={styles.module_class}>CSS Modules (import .module.css)</div>
-        <div style={commonStyles} className="bg-green-200">Tailwind</div>
       </div>
     </div>
   );
