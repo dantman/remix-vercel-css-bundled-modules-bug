@@ -24,7 +24,6 @@ export default function Index() {
       <p>The following blocks are styled green using the respective method of CSS styles.</p>
       <div style={{ backgroundColor: '#fecaca', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
         <div style={{ ...commonStyles, backgroundColor: '#bbf7d0' }}>{'Inline CSS style={}'}</div>
-        <div style={commonStyles} className='global_class'>Global CSS (link .css)</div>
         <div style={commonStyles} className='bundled_class'>Bundled CSS (import .css)</div>
         <div style={commonStyles} className={styles.module_class}>CSS Modules (import .module.css)</div>
       </div>
